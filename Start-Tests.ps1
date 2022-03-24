@@ -26,7 +26,6 @@ try {
         } else {
             $succeeded = $succeeded + 1
         }
-        
 
         $params = @{
             NoNewLine = $true
@@ -36,13 +35,15 @@ try {
         }
 
         Write-Host @params
-        Write-Host " $($_)"
+        Write-Host " $($_.Source)`t| $($_)"
     }
 } catch {
     Write-Host " ERROR  " -ForegroundColor White -BackgroundColor Red -NoNewline
     Write-Host " $($_.Exception.Message)"
 } finally {
-    $testModules | % { Remove-Module $_ }
+    $testModules | ForEach-Object {
+        Remove-Module $_
+    }
 }
 
 @{

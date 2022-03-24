@@ -5,7 +5,7 @@ param(
 
 $params = @{
     SourcePath = "$PSScriptRoot\src\ArgParser.psd1"
-    #CopyPaths = @("$PSScriptRoot\readme.md")
+    CopyPaths = @("$PSScriptRoot\readme.md")
     #Version = $Version
     UnversionedOutputDirectory = $true
 }
