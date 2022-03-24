@@ -33,6 +33,10 @@ But if you prefer from source code:
 Import-Module <repo>/Output/ArgParser/ArgParser.psd1
 ```
 
+## Examples
+
+Check the `/examples` directory for how to parse arguments.
+
 ## Build
 
 1. Clone this repo
