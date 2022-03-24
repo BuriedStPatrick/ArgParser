@@ -5,13 +5,13 @@ Write intuitive CLIs with PowerShell. ArgParser helps with building command obje
 Essentially, if you prefer to build something like this:
 
 ```powershell
-my-cli <command> <resource> <flags>
+my-cli <command> <resource> <values> <flags>
 ```
 
 Over this:
 
 ```powershell
-Start-MyModuleResourceAction -Flags
+Start-MyModuleResourceAction -Value -Switch
 ```
 
 Then this module might be for you.
@@ -33,9 +33,59 @@ But if you prefer from source code:
 Import-Module <repo>/Output/ArgParser/ArgParser.psd1
 ```
 
-## Examples
+## Examples & Usage
 
-Check the `/examples` directory for how to parse arguments.
+```powershell
+## Check if user added a --version|-v switch
+## Example inputs:
+# $ ./script.ps1 --version
+# $ ./script.ps1 -v
+$version = "1.0.0"
+$hasVersionSwitch = Get-ArgsParserHasSwitch `
+    -Name "version" `
+    -ShortName "v" `
+    -Arguments $args
+
+if ($hasVersionSwitch) {
+    Write-Host "Version: $version"
+}
+```
+
+```powershell
+## Get a string value --name|-n
+## Example input:
+# $ ./script.ps1 --name Patrick
+# $ ./script.ps1 --name=Patrick
+# $ ./script.ps1 -n Patrick
+# $ ./script.ps1 -n=Patrick
+$name = Get-ArgsParserStringValue `
+    -Name "name" `
+    -ShortName "n" `
+    -Arguments $args
+
+Write-Host "Hello $name!"
+```
+
+```powershell
+## Get multiple string values --name|-n
+## Example input:
+# $ ./script.ps1 --names Patrick -n Grønbæch --names=Christensen
+$names = Get-ArgsParserStringValues `
+    -Name "names" `
+    -ShortName "n" `
+    -Arguments $args
+
+$names | ForEach-Object {
+    Write-Host $_
+}
+## Outputs:
+# Patrick
+# Grønbæch
+# Christensen
+ #>
+```
+
+Check the `/examples` directory for more info on how to parse arguments.
 
 ## Build
 

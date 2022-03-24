@@ -1,4 +1,9 @@
-﻿# Import the ArgParser module
+﻿#####################################################
+# Example CLI                                       #
+# "Abuses" Set-Alias to function as a root-command  #
+#####################################################
+
+# Import the ArgParser module
 Import-Module (Join-Path $PSScriptRoot .. Output ArgParser)
 
 function Invoke-MyCli() {
