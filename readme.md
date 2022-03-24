@@ -18,14 +18,6 @@ Then this module might be for you.
 
 ## Installation
 
-You can simply install from PSGallery:
-
-```powershell
-Install-Module ArgParser
-```
-
-But if you prefer from source code:
-
 1. Build this repo (See [Build section](#Build))
 2. Import the module from your scripts or wherever you need it:
 
