@@ -22,7 +22,7 @@ CompanyName = 'Patrick Christensen'
 Copyright = '(c) Patrick Christensen. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'PowerShell module that retrieves information from various sources.'
+Description = 'Parse arguments in a user-friendly manner'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '5.1'
@@ -87,7 +87,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @("PSModule", "Information")
+        Tags = @("PSModule", "Parser", "CLI", "Utility", "Arguments")
 
         # A URL to the license for this module.
         # LicenseUri = ''
