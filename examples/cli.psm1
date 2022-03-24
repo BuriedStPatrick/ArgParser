@@ -45,7 +45,7 @@ function Invoke-MyCli() {
     }
 }
 
-# Put the name of the "root" command of your CLI here as an alias that invokes the root command "Invoke-Cli"
+# Put the name of the "root" command of your CLI here as an alias that invokes the root command "Invoke-MyCli"
 # Here we can invoke the commands via the format:
 # $ my-cli <command> <flags>
 Set-Alias my-cli Invoke-MyCli
