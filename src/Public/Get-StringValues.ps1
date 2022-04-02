@@ -12,8 +12,10 @@
         [string[]] $Arguments
     )
 
+    $index = 0
+
     # Positional arguments
-    return $Arguments | ForEach-Object { $index = 0 } {
+    return $Arguments | ForEach-Object {
         $value = $null
         if ($_ -eq "--$Name" -or $_ -eq "-$ShortName") {
             try {
