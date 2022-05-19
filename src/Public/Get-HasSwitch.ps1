@@ -7,9 +7,13 @@ function Get-HasSwitch {
         [Parameter(Mandatory)]
         [string] $ShortName,
 
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory = $false)]
         [string[]] $Arguments
     )
+
+    if ($Arguments.Length -lt 1) {
+        return $false
+    }
 
     if ($Arguments.Contains("--$Name")) {
         return $true
